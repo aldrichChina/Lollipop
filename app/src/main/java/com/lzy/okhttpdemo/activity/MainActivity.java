@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.lzy.okhttpdemo.R;
 import com.lzy.okhttpdemo.fragment.DownloadFragment;
 import com.lzy.okhttpdemo.fragment.OkhttpFragment;
+import com.lzy.okhttpdemo.fragment.TestFragment;
 import com.lzy.okhttpdemo.fragment.UploadFragment;
 import com.lzy.okhttputils.OkHttpUtils;
 import com.lzy.widget.tab.PagerSlidingTabStrip;
@@ -29,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
         PagerSlidingTabStrip tab = (PagerSlidingTabStrip) findViewById(R.id.tab);
 
         fragments = new ArrayList<>();
+        fragments.add(new TestFragment());
         fragments.add(new OkhttpFragment());
         fragments.add(new DownloadFragment());
         fragments.add(new UploadFragment());
+
 
         viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
         tab.setViewPager(viewPager);
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class MyAdapter extends FragmentPagerAdapter {
 
-        private String[] titles = {"一般请求", "下载管理", "上传管理"};
+        private String[] titles = {"测试页面","一般请求", "下载管理", "上传管理"};
 
         public MyAdapter(FragmentManager fm) {
             super(fm);

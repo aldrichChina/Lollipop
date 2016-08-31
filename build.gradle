@@ -2,9 +2,11 @@
 
 buildscript {
     repositories {
+        //可以使用的仓库
         jcenter()
     }
     dependencies {
+        //Gradle版本
         classpath 'com.android.tools.build:gradle:2.1.2'
 
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
@@ -16,10 +18,12 @@ buildscript {
 
 allprojects {
     repositories {
+        //仓库地址,可以转换
         jcenter()
     }
 }
 
 task clean(type: Delete) {
+    //本地仓库
     delete rootProject.buildDir
 }

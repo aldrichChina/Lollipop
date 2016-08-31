@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * ================================================
- * 作    者：廖子尧
+ * 作    者：Aldrich
  * 版    本：1.0
  * 创建日期：2016/1/19
  * 描    述：完全按照AsyncTask的思路，主要是为了默认创建 PriorityRunnable 对象，和 getRunnable() 方法

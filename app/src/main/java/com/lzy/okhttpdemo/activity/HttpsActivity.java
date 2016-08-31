@@ -49,7 +49,7 @@ public class HttpsActivity extends BaseActivity {
 
     @OnClick(R.id.btn_none_https_request)
     public void btn_none_https_request(View view) {
-        OkHttpUtils.get("https://github.com/jeasonlzy0216")//
+        OkHttpUtils.get("https://github.com/aldrichChina")//
                 .tag(this)//
                 .headers("header1", "headerValue1")//
                 .params("param1", "paramValue1")//
