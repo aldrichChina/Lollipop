@@ -8,7 +8,7 @@ android {
     buildToolsVersion "23.0.2"
     defaultConfig {
         //包名
-        applicationId "com.lzy.okhttpdemo"
+        applicationId "com.jia.lollipop"
         //最小API
         minSdkVersion 14
         //编译版本

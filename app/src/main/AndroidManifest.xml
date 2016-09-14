@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.lzy.okhttpdemo"
+<manifest package="com.jia.lollipop"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -8,32 +8,32 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
     <application
-        android:name=".GApp"
+        android:name="com.jia.lollipop.GApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name="com.jia.lollipop.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.DownloadManagerActivity"/>
-        <activity android:name=".activity.DesActivity"/>
-        <activity android:name=".activity.MethodActivity"/>
-        <activity android:name=".activity.CustomRequestActivity"/>
-        <activity android:name=".activity.BitmapRequestActivity"/>
-        <activity android:name=".activity.PostTextActivity"/>
-        <activity android:name=".activity.FormUploadActivity"/>
-        <activity android:name=".activity.FileDownloadActivity"/>
-        <activity android:name=".activity.CacheActivity"/>
-        <activity android:name=".activity.HttpsActivity"/>
-        <activity android:name=".activity.SyncActivity"/>
-        <activity android:name=".activity.RedirectActivity"/>
-        <activity android:name=".activity.TestActivity"/>
+        <activity android:name="com.jia.lollipop.activity.DownloadManagerActivity"/>
+        <activity android:name="com.jia.lollipop.activity.DesActivity"/>
+        <activity android:name="com.jia.lollipop.activity.MethodActivity"/>
+        <activity android:name="com.jia.lollipop.activity.CustomRequestActivity"/>
+        <activity android:name="com.jia.lollipop.activity.BitmapRequestActivity"/>
+        <activity android:name="com.jia.lollipop.activity.PostTextActivity"/>
+        <activity android:name="com.jia.lollipop.activity.FormUploadActivity"/>
+        <activity android:name="com.jia.lollipop.activity.FileDownloadActivity"/>
+        <activity android:name="com.jia.lollipop.activity.CacheActivity"/>
+        <activity android:name="com.jia.lollipop.activity.HttpsActivity"/>
+        <activity android:name="com.jia.lollipop.activity.SyncActivity"/>
+        <activity android:name="com.jia.lollipop.activity.RedirectActivity"/>
+        <activity android:name="com.jia.lollipop.activity.TestActivity"/>
     </application>
 
 </manifest>

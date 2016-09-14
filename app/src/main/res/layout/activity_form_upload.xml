@@ -54,7 +54,7 @@
 
     </RelativeLayout>
 
-    <com.lzy.okhttpdemo.ui.NumberProgressBar
+    <com.jia.lollipop.ui.NumberProgressBar
         android:id="@+id/pbProgress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
