@@ -13,9 +13,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-annotations:23.1.1'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile files('C:/jia/DevelopLibrary/Lollipop/jar/pinyin4j-2.5.0.jar')
 }
 
 //apply from: 'bintray.gradle'
