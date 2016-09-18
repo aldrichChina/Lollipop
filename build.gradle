@@ -2,15 +2,13 @@
 
 buildscript {
     repositories {
-        //可以使用的仓库
         jcenter()
     }
     dependencies {
-        //Gradle版本
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.1.3'
 
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -18,12 +16,11 @@ buildscript {
 
 allprojects {
     repositories {
-        //仓库地址,可以转换
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
 task clean(type: Delete) {
-    //本地仓库
     delete rootProject.buildDir
 }
