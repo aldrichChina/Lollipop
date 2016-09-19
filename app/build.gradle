@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 def buildSdkVersion = 23
 def buildToolVersion = "23.0.3"
 def supportVersion = "23.4.0"
+
 android {
     compileSdkVersion buildSdkVersion
     buildToolsVersion buildToolVersion

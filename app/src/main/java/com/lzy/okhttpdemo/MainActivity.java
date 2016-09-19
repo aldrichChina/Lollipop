@@ -3,13 +3,18 @@ package com.lzy.okhttpdemo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lzy.okhttpdemo.base.BaseActivity;
 import com.lzy.okhttpdemo.base.BaseRecyclerAdapter;
@@ -32,6 +37,7 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.toolbar) Toolbar toolbar;
     @Bind(R.id.recyclerView) RecyclerView recyclerView;
     private ArrayList<OkHttpModel> items;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +46,50 @@ public class MainActivity extends BaseActivity {
         initToolBar(toolbar, false, "");
 
         initData();
+        initNavigationView();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(new MainAdapter(this));
     }
 
+    private void initNavigationView() {
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        Toast.makeText(MainActivity.this, "你点击了菜单1", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_devices:
+                        Toast.makeText(MainActivity.this, "你点击了菜单2", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_favorites:
+                        Toast.makeText(MainActivity.this, "你点击了菜单3", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_userinfo:
+                        WebActivity.runActivity(MainActivity.this, "我的地盘,欢迎star", "http://www.yaojiawei.cc");
+                        break;
+                    case R.id.nav_link1:
+                        Toast.makeText(MainActivity.this, "你点击了菜单4", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_link2:
+                        Toast.makeText(MainActivity.this, "你点击了菜单4", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
+    }
+
     @OnClick(R.id.fab)
     public void fab(View view) {
-        WebActivity.runActivity(this, "我的Github,欢迎star", "http://www.yaojiawei.cc");
+//        WebActivity.runActivity(this, "我的Github,欢迎star", "http://www.yaojiawei.cc");
+        //打开抽屉侧滑菜单
+        drawerLayout.openDrawer(GravityCompat.START);
     }
 
     private void initData() {
@@ -200,4 +241,5 @@ public class MainActivity extends BaseActivity {
         public String des;
         public int type;
     }
+
 }
